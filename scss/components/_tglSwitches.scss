@@ -1,0 +1,45 @@
+//Settings section toggle switches 
+.switch-ctn p,
+.switch-ctn input {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.switch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.switch {
+    cursor: pointer;
+    position: relative;
+    width: 80px;
+    height: 30px;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ccc;
+    appearance: none;
+    transition: background .3s;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: white;
+    transition: left .3s;
+}
+
+.switch:checked {
+    background-color: $main-color;
+}
+
+.switch:checked::after {
+    left: 70%;
+}

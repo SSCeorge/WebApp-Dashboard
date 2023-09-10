@@ -1,0 +1,101 @@
+@keyframes bell {
+    0% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(10deg);
+        fill: $backg-color;
+    }
+    75% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+@keyframes nav {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes wheel {
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes pulse {
+    25% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes glow {
+    50% {
+        border-color: white;
+    }
+    100% {
+        border-color: black;
+    }
+}
+
+.nav-ctn svg {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.nav-home-svg:hover,
+.nav-barchart-svg:hover,
+.nav-members-svg:hover,
+.nav-settings-svg:hover {
+    @include svganm
+}
+
+
+.nav-home-svg:hover {
+    stroke-dasharray: 50 100;
+    stroke-dashoffset: 1469;
+    stroke-width: 3;
+}
+
+.nav-barchart-svg:hover {
+    stroke-dasharray: 250 500;
+    stroke-dashoffset: 1788;
+    stroke-width: 10;
+}
+
+.nav-members-svg:hover {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 3644;
+    stroke-width: 13;
+}
+
+.nav-settings-svg:hover {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 3522;
+    stroke-width: 13;
+    animation: nav 4s forwards linear infinite, wheel 0.6s ease-in;
+}
+
+.bell-notf {
+    animation: pulse 2s infinite;
+}
+
+.svg-bell:hover {
+    animation: bell 0.4s infinite;
+    transition: all 0.3s ease-in-out;
+} 

@@ -1,0 +1,78 @@
+@media (min-width: 1024px) {
+    .svg-bell {
+        margin-left: 750px;
+    }
+
+    .popup {
+        margin: 4rem 0 0 51%;
+        width: 35vw;
+    }
+
+    .popx {
+        margin-left: 88%;
+    }
+
+    .chartlist {
+        margin-left: 49vw;
+    }
+
+    .nav-ctn svg {
+        margin-left: 1.8rem
+    }
+
+    .inline-chrt-ctn {
+        width: 100%;
+    }
+
+    .daily-sec,
+    .mobile-sec {
+        width: 50%;
+    }
+
+    .social-div {
+        width: 31%;
+    }
+
+    .nm-sec,
+    .ra-sec {
+        display: inline-block;
+        width: 49%;
+    }
+
+    .name-p {
+        margin-top: 1rem;
+    }
+
+    .set-sec {
+        border-left: $brdr;
+    }
+
+    .msg-sec,
+    .set-sec {
+        display: inline-flex;
+    }
+
+    .msg-sec,
+    .msg-usr-form {
+        width: 450px;
+    }
+
+    .switch-row {
+        max-width: 70%;
+    }
+
+    .tz-select {
+        margin-top: 50px;
+    }
+
+    .btn-save,
+    .btn-cnc {
+        height: 45px;
+    }
+
+    .set-sec,
+    .set-btn-ctn,
+    .tz-select {
+        width: 450px;
+    }
+}

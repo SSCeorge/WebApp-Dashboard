@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+h3 {
+    margin-left: 1rem;
+    font-size: medium;
+}
+
+.grid-ctn-main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main";
+}
+
+.dashb {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+
+.empty {
+   border-bottom: $brdr; 
+   border-left: $brdr;
+   margin-left: 7.5rem;
+   height: 3rem;
+   margin-top: -3.1rem;
+}
+
+.bandiv {
+    width: 90vw;
+    background-color: $main-color;
+    color: aliceblue;
+    border-radius: 5px;
+    height: 2.5rem;
+    margin: auto;
+}
+
+.alertban {
+    font-weight: 100;
+    font-size: 1rem;
+    font-family: none;
+    padding-top: 0.6rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+}   
+
+.alertx {
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 4rem 30% 0 5%;
+    z-index: 9999;
+    width: 65vw;
+    height: 50vh;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: $second-color;
+    padding: 0 1rem 1rem 1rem;
+    overflow-y: auto;
+}
+
+.popx {
+    cursor: pointer;
+    margin-left: 80%;
+    margin-top: 2px;
+    position: absolute;
+    background-color: $main-color;
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: 1px solid black;
+    font-size: 8px;
+    font-style: italic;
+    font-weight: bold;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.popup-content div {
+    padding: 0.7rem;
+    background-color: $main-color;
+    border-radius: 10px;
+    border: 1px solid black; 
+    margin-top: 1rem;
+    animation: glow 3s infinite;
+    transition: all 1s ease-in;
+    &:hover {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        animation: none;
+        transition: all 0.2s ease-in;
+    }
+    &:first-child {
+        margin-top: 2.2rem;
+    }
+}
+
+.popup::-webkit-scrollbar {
+    width: 5px; 
+    background-color: $main-color; 
+}
+
+.popup::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 5px; 
+}
+
+.popup::-webkit-scrollbar-button {
+    background: #555; 
+}

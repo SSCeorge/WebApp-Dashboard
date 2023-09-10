@@ -1,0 +1,163 @@
+//Social section
+.social-sec {
+    border-bottom: $brdr;
+}
+
+.social-div {
+    border: $brdr;
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin: 1rem;
+    display: flex;
+}
+
+.social-div p {
+    margin-left: 2rem;
+}
+
+.social-p {
+    color: $main-color;
+    font-weight: bolder;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.social-num {
+    font-size: 2rem;
+    margin: 0;
+}
+
+//New members section
+.nm-sec-div {
+    //border-bottom: $brdr;
+    display: grid;
+    justify-content: center;
+}
+
+.nm {
+    margin-bottom: 0;
+}
+
+.nm-main-div {
+    border-bottom: $brdr;
+}
+
+.nm-main-div img {
+    border-radius: 50%;
+    width: 20%;
+    display: grid;
+    margin: 1rem auto 0 auto;
+}
+
+.name-p {
+    margin: 0;
+    display: grid;
+    justify-items: center;
+}
+
+.num-p {
+    margin-top: 0;
+    display: grid;
+    justify-items: center;
+}
+
+//Recent activity section
+.ra {
+    margin-bottom: 0;
+}
+
+.ra-div {
+    display: grid;
+    border-bottom: $brdr;
+}
+
+.ra-div img {
+    border-radius: 50%;
+    width: 20%;
+    justify-self: center;
+    margin-top: 1rem;
+}
+
+.ra-des {
+    margin: 0;
+    display: grid;
+    justify-items: center;
+}
+
+.ra-per {
+    margin: 0 0 1rem 0;
+    display: grid;
+    justify-items: center;
+}
+
+//Message user section
+.msg-sec {
+    border-bottom: $brdr;
+}
+
+.msg-usr-form {
+    display: grid;
+    row-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-srch,
+.msg-usr,
+.btn-snd {
+    background-color: $backg-color;
+    @include section-style
+}
+
+.msg-usr {
+    height: 150px;
+}
+
+.btn-snd {
+    background-color: $main-color;
+    color: aliceblue;
+}
+
+.results {
+    display: none;
+    cursor: pointer;
+    background-color: $backg-color;
+    border-radius: 1rem;
+    width: 50%;
+    margin-left: 0.5rem;
+}   
+
+.results li:hover {
+    font-weight: bold;
+}
+
+//Settings section
+.tz-select {
+    @include section-style;
+    background-color: $backg-color;
+}
+
+//Buttons
+.set-btn-ctn {
+    display: flex;
+    margin: 10px auto 5px auto ;
+    justify-content: space-evenly;
+    max-width: 95%;
+}
+
+.btn-save,
+.btn-cnc {
+    border: $brdr;
+    width: 45%;
+    height: 7vh;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: antiquewhite;
+}
+
+.btn-save {
+    background-color: $main-color;
+}
+
+.btn-cnc {
+    background-color: gray;
+}

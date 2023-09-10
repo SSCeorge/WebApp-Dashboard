@@ -1,0 +1,51 @@
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: $main-color;
+    color: white;
+    fill: aliceblue;
+    padding: 0.3rem;
+}
+
+.header-ctn-main {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+h1 {  
+    font-size: 1.4rem;
+    margin-left: 0.5rem;
+}
+
+//App from the webapp h1 targeted 
+.ap {
+    font-weight: 100;
+}
+
+.tm {
+    font-size: 0.8rem;
+    position: absolute;
+}
+
+.header-ctn-secondary {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-left: solid rgb(167, 163, 163) 1px;
+    justify-self: end;
+    margin-right: 5px;
+}
+
+.header-ctn-secondary h2 {
+    align-self: center;
+    font-size: 0.8rem;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.header-ctn-secondary img {
+    border-radius: 50%;
+    width: 40px;
+    margin: 0 5px;
+}

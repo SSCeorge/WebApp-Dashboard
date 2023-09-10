@@ -1,0 +1,38 @@
+.chartlist {
+    list-style: none;
+    margin-left: -1rem;
+    margin-top: 0.5rem;
+}
+
+.chartlist li {
+    display: inline-block;
+    margin-right: 5vw;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.chartlist li.active {
+    color: aliceblue;
+    padding: 5px;
+    font-weight: bold;
+}
+  
+.chartlist li.active::before {
+    content: '';
+    background-color: rgb(30, 252, 115);
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    bottom: 0;
+    right: -0.5rem;
+    z-index: -1;
+}
+  
+.trf-sec,
+.daily-sec,
+.mobile-sec {
+    border-bottom: $brdr;
+    padding-bottom: 1rem;
+} 

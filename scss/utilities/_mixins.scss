@@ -1,0 +1,15 @@
+//Section border styles
+@mixin section-style {
+    border: $brdr;
+    max-width: 90%;
+    margin: 0 5%;
+    padding: 0.7rem;
+    border-radius: 5px;
+}
+
+//Animation block
+@mixin svganm {
+    stroke: $main-color;
+    animation: nav 4s forwards linear infinite; 
+    transition: all 0.5s ease-in-out;
+}
