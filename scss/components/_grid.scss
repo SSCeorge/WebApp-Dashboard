@@ -29,6 +29,7 @@ h3 {
    margin-left: 7.5rem;
    height: 3rem;
    margin-top: -3.1rem;
+   background-color: $backg-color;
 }
 
 .bandiv {
@@ -103,6 +104,7 @@ h3 {
         box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         animation: none;
         transition: all 0.2s ease-in;
+        cursor: pointer;
     }
     &:first-child {
         margin-top: 2.2rem;

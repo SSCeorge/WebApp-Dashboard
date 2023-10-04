@@ -14,6 +14,8 @@ const mobilePie = document.getElementById('mobileDon');
 //Active chart
 const chartList = document.querySelectorAll('.chartlist li');
 
+chartList[0].classList.add('active');
+
 chartList.forEach(item => {
   item.addEventListener('click', () => {
 
@@ -85,7 +87,6 @@ chartBtns.forEach(btn => {
         trafficChart.update();
     });
 });
-
 
 //Traffic
 let trfData = {
@@ -193,7 +194,9 @@ const leng = svg.getTotalLength();
 console.log("total:", leng);*/
 
 //Search, messaging services
-const notifications = [];
+const notifications = [
+    //Messages will be appended here
+];
 
 const memberNames = [
     "Victoria Chambers",
@@ -202,11 +205,12 @@ const memberNames = [
     "Dan Oliver"
 ];
 
+const notificationPopup = document.getElementById('notificationPopup');
+const bell = document.getElementById('bellz');
 const srchInput = document.getElementById('srchInput');
 const srchRes = document.getElementById('srchRes');
 const msgF = document.getElementById('msg-box');
 const sndBtn = document.getElementById('snd-btn');
-const bell = document.getElementById('bellz');
 
 //Filter members based on input
 function filterMembers(search) {
@@ -242,52 +246,89 @@ srchInput.addEventListener('input', () => {
     displayResults(filteredMembers);
 });
 
-//Send button functionality 
-sndBtn.addEventListener('click', (e) => {
-    // ensure user and message fields are filled out
-    e.preventDefault();
-    if (srchInput.value === "" && msgF.value === "") {
-        alert("Please fill out user and message fields before sending");
-    } else if (srchInput.value === "" ) {
-        alert("Please fill out user field before sending");
-    } else if (msgF.value === "" ) {
-        alert("Please fill out message field before sending");
-    } else {
-        notifications.push(`${srchInput.value} has a new message`);
-        alert(`Message successfully sent to: ${srchInput.value}`);
-        banner.style.visibility = '';
-        bell.style.display = '';
+document.addEventListener('DOMContentLoaded', function () {
+    //Get notifications from local storage
+    let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+    
+    const deleteMsg = document.querySelector('.popup-content');
+
+    const initialNotifs = [
+        'Victoria Chambers has a new message',
+        'Dan Oliver has a new message'
+    ];
+    
+    initialNotifs.forEach(notif => {
+        if (!notifications.includes(notif)) {
+            //notifications.unshift(notif); 
+            notifications.push(notif);
+        }
+    });
+    
+    //Delete message from the notifications array
+    function removeMsg(index) {
+        notifications.splice(index, 1);
+        localStorage.setItem('notifications', JSON.stringify(notifications));
+        displayNotifications(notifications);
+        notificationPopup.style.display = 'block';
     }
-});
 
-//Display notifications in the popup
-function displayNotifications(notifications) {
-    const notificationContent = document.getElementById('notificationContent');
-    notificationContent.innerHTML = ''; // Clear previous notifications
-
-    notifications.forEach(notification => {
-        const notificationItem = document.createElement('div');
-        notificationItem.textContent = notification;
-        notificationContent.appendChild(notificationItem);
+    deleteMsg.addEventListener('click', (e) => {
+        if (e.target && e.target.nodeName === 'DIV') {
+            const index = Array.from(deleteMsg.children).indexOf(e.target);
+            removeMsg(index);
+        }
     });
 
-    // Display the popup
-    const notificationPopup = document.getElementById('notificationPopup');
-    notificationPopup.style.display = 'block';
-}
+    //Send button functionality 
+    sndBtn.addEventListener('click', (e) => {
+        if (srchInput.value === "" && msgF.value === "") {
+            e.preventDefault();
+            alert("Please fill out user and message fields before sending");
+        } else if (srchInput.value === "" ) {
+            e.preventDefault();
+            alert("Please fill out user field before sending");
+        } else if (msgF.value === "" ) {
+            e.preventDefault();
+            alert("Please fill out message field before sending");
+        } else {
+            notifications.push(`${srchInput.value} has a new message`);
+            localStorage.setItem('notifications', JSON.stringify(notifications));
+            alert(`Message successfully sent to: ${srchInput.value}`);
+            //banner.style.visibility = '';
+            //bell.style.display = '';
+            displayNotifications(notifications);
+        }
+    });
+
+    function displayNotifications(notifications) {
+        const notificationContent = document.getElementById('notificationContent');
+        notificationContent.innerHTML = ''; //Clear previous notifications
+
+        notifications.forEach((notification, index) => {
+            const notificationItem = document.createElement('div');
+            notificationItem.textContent = notification;
+            notificationItem.dataset.index = index; //Store the index of the message
+            notificationContent.appendChild(notificationItem);
+        });
+
+        //Display the popup
+        notificationPopup.style.display = '';
+    }
+
+    displayNotifications(notifications); 
+});
 
 //Event listener for svg-bell
 const svgBell = document.querySelector('.svg-bell');
 const popx = document.querySelector('.popx');
 
 popx.addEventListener('click', () => {
-    const notificationPopup = document.getElementById('notificationPopup');
     notificationPopup.style.display = 'none';
 });
 
 svgBell.addEventListener('click', () => {
-    displayNotifications(notifications);
-    bell.style.display = 'none';
+    bell.style.display = 'none'
+    notificationPopup.style.display = 'block';
 });
 
 //Local Memory setup
@@ -319,7 +360,7 @@ if (savedTzIndex !== null) {
 
 //Save button
 document.getElementById('save-btn').addEventListener('click', () => {
-    // Save settings to Local Storage
+    //Save settings to Local Storage
     localStorage.setItem('emailSetting', emailSwitch.checked);
     localStorage.setItem('profileSetting', profileSwitch.checked);
     localStorage.setItem('savedMessage', msgBox.value);

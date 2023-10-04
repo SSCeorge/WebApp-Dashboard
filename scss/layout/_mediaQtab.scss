@@ -34,7 +34,7 @@
     }
       
     .svg-bell {
-        margin-left: 500px;
+        margin-left: 65vw;
     }
 
     .bandiv {
@@ -54,6 +54,10 @@
     .trf-ctn {
         display: inline-flex;
         margin-top: 0.5rem;
+    }
+
+    .trf {
+        margin-top: 10px;
     }
 
     .chartlist {
@@ -123,16 +127,17 @@
     .nm-sec-div {
         display: block;
         width: 100%;
+        margin: auto;
     }
 
     .name-p {
         justify-content: flex-start;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     .num-p {
         justify-content: flex-end;
-        margin-top: -2rem;
+        margin-top: -1.5rem;
         margin-right: 1rem;
     }
 
@@ -143,10 +148,11 @@
 
     .ra-div {
         display: flex;
+        justify-content: space-between;
     }
 
-    .ra-div div {
-        align-self: center;
+    .ra-content {
+       margin: auto auto auto 0;
     }
 
     .ra-des {
@@ -156,6 +162,12 @@
     .ra-per {
         margin-bottom: 0;
         justify-items: flex-start;
+    }
+
+    .arrow {
+        display: block;
+        font-size: 22px;
+        margin: auto 0 auto auto;
     }
 
     //Message section

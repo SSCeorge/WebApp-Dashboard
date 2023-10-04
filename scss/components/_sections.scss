@@ -9,6 +9,7 @@
     padding: 0.8rem;
     margin: 1rem;
     display: flex;
+    background-color: $backg-color;
 }
 
 .social-div p {
@@ -90,6 +91,13 @@
     justify-items: center;
 }
 
+.arrow {
+    display: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 //Message user section
 .msg-sec {
     border-bottom: $brdr;
@@ -152,6 +160,7 @@
     padding: 0.5rem;
     border-radius: 5px;
     color: antiquewhite;
+    margin-bottom: 1rem;
 }
 
 .btn-save {
